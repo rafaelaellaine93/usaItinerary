@@ -1,0 +1,213 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ECFBFC;
+    color: #235952;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    animation: fadeIn 2s;
+}
+
+header {
+    background-color: #235952;
+    color: #FFEBD9;
+    text-align: center;
+    padding: 10px 0;
+}
+
+h1 {
+    font-size: 2.5rem; /* Adjust the font size as needed */
+    color: #FFEBD9; /* Text color */
+    text-shadow: 2px 2px 4px rgba(35, 89, 82, 0.2); /* Text shadow for a subtle effect */
+    margin: 20px 0; /* Margin to add space above and below the header */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #FFEBD9;
+    padding: 10px 10px;
+    margin: 0 10px;
+}
+
+.nav-link:hover {
+    background-color: #235952;
+}
+
+.central-text h2 {
+    font-size: 4em;
+    margin: 40px 0;
+    color: #FFC8BD;
+    text-shadow: 3px 3px 5px #235952;
+    font-weight: bold;
+    transition: transform 0.5s ease;
+    animation: float 3s ease-in-out 1;
+}
+
+.locations {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom right, #FFEBD9, #FFC8BD);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Soft drop shadow */
+    font-size: 1.2em;
+    color: #235952;
+    cursor: pointer;
+    opacity: 0; 
+    animation: popAndFadeIn 0.6s ease forwards;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+}
+
+.circle:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    background: linear-gradient(to bottom right, #FFC8BD, #FFEBD9); /* Change background color on hover */
+}
+
+.circle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.box-section {
+    background-color: #FFEBD9;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px; /* Add margin to create spaces between boxes */
+    box-shadow: 0 2px 4px rgba(35, 89, 82, 0.2);
+    max-width: 400px; /* Set your desired fixed width */
+    margin: 0 auto; /* Center the box horizontally */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.box-section h2 {
+    font-size: 1.5rem;
+    color: #235952;
+    margin-bottom: 10px;
+}
+
+.box-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.box-section li {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background-color: #FFC8BD;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(35, 89, 82, 0.2);
+    font-size: 1.2rem;
+    color: #235952;
+    transition: transform 0.2s ease-in-out;
+}
+
+.box-section li:hover {
+    transform: scale(1.05);
+    background-color: #FFEBD9;
+    box-shadow: 0 4px 6px rgba(35, 89, 82, 0.3);
+}
+
+#california {
+    animation-delay: 0s; /* Starts immediately */
+}
+
+#arizona {
+    animation-delay: 0.6s; /* Starts after the first one completes */
+}
+
+#lasVegas {
+    animation-delay: 1.2s; /* Starts after the second one completes */
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Increased padding for size */
+    box-shadow: 0 0 10px rgba(35, 89, 82, 0.5); /* Shadow effect */
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5rem;
+    color: #235952;
+    width: fit-content; /* Set width to content width */
+    margin: 0 auto; /* Center horizontally */
+}
+
+#countdown div {
+    padding: 10px;
+    background-color: #FFEBD9;
+    color: #235952;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(35, 89, 82, 0.5); /* Shadow effect */
+    transition: transform 0.2s ease-in-out;
+}
+
+#countdown div:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    .locations {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .circle {
+        margin-top: 10px; /* Add spacing between circles */
+    }
+}
+
+@keyframes popAndFadeIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
